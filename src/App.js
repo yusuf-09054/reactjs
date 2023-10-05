@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// function
+// function syntex
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// function functioname()
+// {
+
+// }
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+export function App1()
+{
+    return(
+        <>
+            <h1>Welcome to react js</h1>
+            <h2>Yusuf</h2>
+            <h2>Mohanavel</h2>
+            <ol>
+                chocolate name <i class="bi bi-badge-4k-fill"></i>
+                <li>Nestle</li>
+                <li className='text-success'>Diary</li>
+                <li className='text-danger'>Kitkat</li>
+            </ol>
+            <ol>
+                Bootstrap Colors <i class="bi bi-amazon"></i>
+                <li className='text-primary'>Primary(Facebook color)</li>
+                <li className='text-info'>info(Sky color)</li>
+                <li className='text-success'>Success(green)</li>
+                <li className='text-danger'>danger(red)</li>
+                <li className='text-secondary'>secondary(gray)</li>
+                <li className='text-dark'>dark(black)</li>
+                <li className='text-light bg-warning'>light(white)</li>
+                <li className='text-warning'>warning(yellow with orange)</li>
+            </ol>
+        </>
+    );
 }
-
-export default App;
