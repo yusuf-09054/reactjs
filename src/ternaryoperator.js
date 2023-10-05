@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import { useState } from "react";
-
+// https://github.com/Manojkumar886/mohu_frontend
 
 export let Operator=()=>
 {
