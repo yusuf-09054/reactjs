@@ -9,8 +9,7 @@ export let Homepage=()=>
         <NavbarToggle aria-controls="#mynavbar"/><NavbarToggle/>
         <NavbarCollapse id="mynavbar">
         <Nav>
-            <Nav.Link href="/ternary1">ternaryoperators</Nav.Link>
-            <Nav.Link href="/usestate1">useState</Nav.Link>
+            <Nav.Link href="/listall">Listall</Nav.Link>
         </Nav>
         </NavbarCollapse>
         </Navbar>

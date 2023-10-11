@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useState } from "react"
+import { creation } from "./Arrayvalues"
 export let Registrationform=()=>
 
 {
@@ -25,6 +26,8 @@ export let Registrationform=()=>
     const register=()=>
     {
         alert("SUCCESSFULLY REGISTERED"+JSON.stringify(myvalues))
+        creation(myvalues)
+        alert("your value is added successfully")
     }
     return(
         <>
