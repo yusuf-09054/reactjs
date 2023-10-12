@@ -25,3 +25,7 @@ export let listing=()=>
 {
     return studentdetails;
 }
+export let reading=(index)=>
+{
+    return studentdetails[index];//studentdetails[1]
+}

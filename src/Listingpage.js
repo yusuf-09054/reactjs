@@ -2,13 +2,14 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react"
 import { listing } from "./Arrayvalues";
 import { Registrationform } from "./registrationfrom";
-
+import { Readpage } from "./Readpage";
 
 export let Listingpage=()=>
 {
-  const [temparray,settemparray]=useState([]);
-
+  const [temparray,settemparray]=useState([])
   const[createpage,setcreatepage]=useState(false);
+  const[readpage,setReadpage]=useState(false);
+  const[pos,setpos]=useState(0);
 
   const gettingvalues=()=>
   {
@@ -17,9 +18,9 @@ export let Listingpage=()=>
    useEffect(()=>
    {
     gettingvalues()
-   }
-   )
+   })
    return(
+
     <>
     <div className="container row justify-content-center">
         {
@@ -27,22 +28,31 @@ export let Listingpage=()=>
             <>
             <Registrationform/>
             <button className="btn btn-ouline-secondary col-2 mt-2 mb-3"
-            onClick={
-                ()=>
+            onClick={()=>
             {
                 setcreatepage(false)
             }}
-            >BACK
-            </button>
+            >BACK </button>
             </>
             :
+            (readpage)?
+            <>
+            <Readpage who={pos}/>
+            <button
+            onClick={()=>
+            {
+                setReadpage(false)
+            }}
+            >BACK</button>
+            </>
+            :
+            <>
             <button className="btn btn-outline-success col-2 mt-2 mb-3"
             onClick={()=>
             {
                 setcreatepage(true)
             }}
             >Registration</button>
-        }
      <table className="table table-striped table-dark col-lg-8 col-md-10 col-sm-12">
         <thead>
             <tr>
@@ -53,11 +63,15 @@ export let Listingpage=()=>
         </thead>
         <tbody>
             {
-                temparray.map((data)=>
+                temparray.map((data,index)=>
                 (
                     <>
                      <tr>
-                        <td>{data.stuid}</td>
+                        <td onClick={()=>
+                        {
+                            setReadpage(true);
+                            setpos(index)
+                        }}>{data.stuid}</td>
                         <td>{data.stuname}</td>
                         <td>{data.studob}</td>
                     </tr>
@@ -66,7 +80,9 @@ export let Listingpage=()=>
             }
         </tbody>
      </table>
+     </>
+}
     </div>
     </>
-   )
+   );
 }
