@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react"
-import { listing } from "./Arrayvalues";
+import { Fetchingvalues, listing, removing } from "./Arrayvalues";
 import { Registrationform } from "./registrationfrom";
 import { Readpage } from "./Readpage";
 
@@ -10,6 +10,8 @@ export let Listingpage=()=>
   const[createpage,setcreatepage]=useState(false);
   const[readpage,setReadpage]=useState(false);
   const[pos,setpos]=useState(0);
+  const[updatepage,setUpdatepage]=useState(false);
+  const[object,setObject]=useState({});
 
   const gettingvalues=()=>
   {
@@ -46,6 +48,17 @@ export let Listingpage=()=>
             >BACK</button>
             </>
             :
+            (updatepage)?
+                <>
+                <updatepage who={pos} studentdet={object} />
+                <button 
+                onClick={()=>
+                {
+                   setUpdatepage(false)
+                }}
+                >BACK</button>
+                </>
+                :
             <>
             <button className="btn btn-outline-success col-2 mt-2 mb-3"
             onClick={()=>
@@ -74,6 +87,25 @@ export let Listingpage=()=>
                         }}>{data.stuid}</td>
                         <td>{data.stuname}</td>
                         <td>{data.studob}</td>
+                        <td>
+                                        <button
+                                        className='btn btn-outline-warning'
+                                        onClick={()=>
+                                        {
+                                            setUpdatepage(true)
+                                            setpos(index)
+                                            const temp=Fetchingvalues(data.stuname);
+                                            setObject(temp);
+                                        }}
+                                        >UPDATE</button>
+                                        <button
+                                         className='btn btn-outline-danger'
+                                         onClick={()=>
+                                         {
+                                             settemparray(removing(index))
+                                         }}
+                                        >DELETE</button>
+                                    </td>
                     </tr>
                     </>
                 ))

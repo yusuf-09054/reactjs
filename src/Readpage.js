@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { reading } from "./Arrayvalues"
+import { Reading } from "./Arrayvalues"
 
 export let Readpage=(indexvalue)=>
 {
@@ -10,7 +10,7 @@ export let Readpage=(indexvalue)=>
     })
     const settingvalues=()=>
     {
-        setmyvalues(reading(indexvalue.who))
+        setmyvalues(Reading(indexvalue.who))
     }
     useEffect(()=>
     {
