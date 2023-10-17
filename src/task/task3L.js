@@ -1,19 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import { bistable } from "./task1";
-import { bisrpage } from "./task2r";
 import { useEffect, useState } from "react";
-import { list } from "./task";
+import { Fetchingvalues1,list,removing1} from "./taska";
+import { Bistable} from "./task1t";
+import { BisUpage } from "./task4U";
+import { Bisrpage1 } from "./task2r";
+import { Fetchingvalues } from "../Arrayvalues";
 
-export let bislpage=()=>
+export let Bislpage=()=>
 {
     const[temparray,settemparray]=useState([])
-    const[create,setcreate]=useState(false);
-    const [readpage,setReadpage]=useState(false);
+    const[create,setCreate]=useState(false);
+    const[readpage,setReadpage]=useState(false);
     const[pos,setpos]=useState(0);
     const[updatepage,setupdatepage]=useState(false);
     const[object,setObject]=useState({});
-}
 const gettingvalues=()=>
   {
     settemparray(list());
@@ -23,17 +24,17 @@ const gettingvalues=()=>
     gettingvalues()
    })
     
-   return(
+    return(
     <>
     <div className="container row justify-content-center">
         {
             (create)?
             <>
-            <bistable/>
+            <Bistable/>
             <button className=" btn btn-outline-secondary col-2 mt-2 mb-3"
             onClick={()=>
             {
-                setcreate(false)
+                setCreate(false)
             }}
              >BACK
             </button>
@@ -41,7 +42,7 @@ const gettingvalues=()=>
             :
             (readpage)?
             <>
-            <Readpage how={pos}/>
+            <Bisrpage1 who={pos}/>
             <button onClick={()=>
             {
                 setReadpage(false)
@@ -52,11 +53,11 @@ const gettingvalues=()=>
             :
             (updatepage)?
             <>
-            <updatepage who={pos} biscuitdet={object}/>
+            <BisUpage who1={pos} biscuitdet={object}/>
             <button 
             onClick={()=>
             {
-               setUpdatepage(false)
+               setupdatepage(false)
             }}
             >BACK</button>
             </>
@@ -65,7 +66,7 @@ const gettingvalues=()=>
             <button className="btn btn-outline-successcol-2 mt-2 mb-3"
             onClick={()=>
             {
-                setcreatepage(true)
+                setCreate(true)
             }}
             >Submit</button>
             <table className="table table-striped table-dark col-lg-8 col-md-10 col-sm-12">
@@ -75,11 +76,12 @@ const gettingvalues=()=>
                 <th>Biscuit Name</th>
                 <th>Biscuit MRP</th>
                 <th>Biscuit Quantity</th>
+                <th>ACTIONS</th>
               </tr>
              </thead>
              <tbody>
                 {
-                    temparray.map((data,index)
+                    temparray.map((data,index)=>
                     (
                         <>
                         <tr>
@@ -92,21 +94,21 @@ const gettingvalues=()=>
                             <td>{data.bismrp}</td>
                             <td>{data.bisquantity}</td>
                             <td> 
-                                <button 
-                                className="btn btn-outline-warning"
-                                onclick={()=>
+                                <button className="btn btn-outline-info"
+                                onClick={()=>
                                 {
-                                    setUpdatepage(true)
-                                            setpos(index)
-                                            const temp=Fetchingvalues1(data.bisnamename);
-                                            setObject(temp);
-                                }}
-                                >UPDATE</button>
+                                    setupdatepage(true)
+                                    setpos(index)
+                                    const temp=Fetchingvalues1(data.bisname);
+                                    setObject(temp);
+                                }}>
+                                    Update
+                                </button>
                                 <button
                                  className='btn btn-outline-danger'
                                  onClick={()=>
                                  {
-                                     settemparray(removing(index))
+                                     settemparray(removing1(index))
                                  }}
                                 >DELETE</button>
                             </td>
@@ -118,7 +120,7 @@ const gettingvalues=()=>
             </table>
             </>
         }
-
     </div>
     </>
-   )
+   );
+}

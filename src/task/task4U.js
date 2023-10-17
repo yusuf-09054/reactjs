@@ -1,29 +1,35 @@
 import { useState } from "react"
+import { altervalues1 } from "./taska";
 
-export let bistable=()=>
+export let BisUpage=(replacing)=>
 {
- const[values,setvalues]=useState({
-    "bisno":0,
-    "bisname":"",
-    "bismrp":"",
-    "bisquantity":0,
- })
-}
-
-const track=(datas)=>
-{
-    const {name,values}=datas.target
-    setvalues((getting)=>
-    {
-     return{
-        ...getting,
-        [name]:values
-     }
+    const [pos,setpos]=useState(replacing.who1);
+    const [values,setvalues]=useState({
+        "bisno":replacing.biscuitdet.bisno,
+        "bisname":replacing.biscuitdet.bisname,
+        "bismrp":replacing.biscuitdet.bismrp,
+        "bisquantity":replacing.biscuitdet.bisquantity,
     })
-}
-return(
-    <>
-    <div className="container text-center">
+    const track=(datas)=>
+    {
+        const{name,value}=datas.target
+        setvalues((getting)=>
+        {
+          return{
+           ...getting,
+           [name]:value
+          }
+        })
+    }
+    const updating1=()=>
+    {
+      altervalues1(values,pos);
+      alert("Updated successfully")
+      alert(JSON.stringify(values));
+    }
+    return(
+        <>
+        <div className="container text-center">
         <div className="row justify-content-center">
             <h1 className="text-center">Biscuitsdetails</h1>
             <div className="col-lg-8 col-md-10 col-sm-12">
@@ -70,9 +76,15 @@ return(
                         className="form-contorl"
                         />
                     </div>
+                    <div className="row justify-content-center mt-5">
+                    <button className="btn btn-outline-success col-5 me-3"onClick={updating1}>Update</button>
+                    <button className="btn btn-outline-danger col-5 me-3">CANCEL</button>
+
+                    </div>
                    </div>
              </div>
         </div>
-    </div>
-    </>
-)
+        </div>
+        </>
+    )
+}

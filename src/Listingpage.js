@@ -69,9 +69,10 @@ export let Listingpage=()=>
      <table className="table table-striped table-dark col-lg-8 col-md-10 col-sm-12">
         <thead>
             <tr>
-                <th>STUDENT ID</th>
-                <th>STUDENT NAME</th>
-                <th>STUDENT DOB</th>
+                <th>Student ID</th>
+                <th>Student NAME</th>
+                <th>Student DOB</th>
+                <th>Update/Delete</th>
             </tr>
         </thead>
         <tbody>

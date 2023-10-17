@@ -6,9 +6,9 @@ export let Registrationform=()=>
 {
     //const[getvariable,setvariable]=usestate(initialization)
     const[myvalues,setmyvalues]=useState({
-       "stuid":0,
-       "stuname":"",
-       "studob":"", 
+    "stuid":0,
+    "stuname":"",
+    "studob":"",
     })
 
     const track=(datas)=>
@@ -31,14 +31,14 @@ export let Registrationform=()=>
     }
     return(
         <>
-        <form className="container text-center">
+        <div className="container text-center">
             <div className="row justify-content-center">
-            <h1 className="text-center">REGISTRATION FORM</h1>
+            <h1 className="text-center">STUDENT DETAILS</h1>
                 <div className="col-lg-8 col-md-10 col-sm-12">
                     <div className="form-group">
-                        <label className="form-label">Enter your register no:</label>
+                        <label className="form-label">Enter your ID:</label>
                         <input
-                        placeholder="Enter your regno"
+                        placeholder="Enter your fav biscuit no:"
                         type="number"
                         name="stuid"
                         onChange={track}
@@ -58,9 +58,9 @@ export let Registrationform=()=>
                         />
                     </div>
                     <div className="form-group">
-                        <label className="form-label">Enter your DOB:</label>
+                        <label className="form-label">Enter DOB</label>
                         <input
-                        placeholder="Enter your DOB"
+                        placeholder="Enter Dob"
                         type="text"
                         name="studob"
                         onChange={track}
@@ -69,13 +69,13 @@ export let Registrationform=()=>
                         />
                     </div>
                     <div className="row justify-content-center mt-5">
-                    <button className="btn btn-outline-success col-5 me-3"onClick={register}>REGISTER</button>
+                    <button className="btn btn-outline-success col-5 me-3"onClick={register}>SUBMIT</button>
                     <button className="btn btn-outline-danger col-5 me-3">CANCEL</button>
 
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
         </>
     );
 }

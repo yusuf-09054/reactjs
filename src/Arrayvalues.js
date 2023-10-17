@@ -1,18 +1,18 @@
 let studentdetails=[
     {
         "stuid":1001,
-        "stuname":"YUSUF",
+        "stuname":" YUSUF",
         "studob":"MAY 9"
     },
     {
         "stuid":1002,
-        "stuname":"YOGI",
-        "studob":"JAN 1"
+        "stuname":"ANNAMALAI",
+        "studob":"JUNE 10"
     },
     {
         "stuid":1003,
         "stuname":"TEJA",
-        "studob":"AUG 4"
+        "studob":"AUG 3"
     },
 ]
 

@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { altervalues } from "./Arrayvalues";
+
 export const Updatepage=(replacing)=>
 {
     const[pos,setPos]=useState(replacing.who);
@@ -63,7 +66,7 @@ export const Updatepage=(replacing)=>
                         />
                     </div>
                     <div className="row justify-content-center mt-5">
-                    <button className="btn btn-outline-success col-5 me-3"onClick={register}>UPDATE</button>
+                    <button className="btn btn-outline-success col-5 me-3"onClick={updating}>UPDATE</button>
                     <button className="btn btn-outline-danger col-5 me-3">CANCEL</button>
                     </div>
                 </div>

@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react"
-import { Reading1 } from "./task"
+import { Reading1 } from "./taska"
 
- export let bisrpage=(indexvalue)=>
+ export let Bisrpage1=(indexvalue)=>
  {
     const[values,setvalues]=useState({
-        "bisno":0,
+    "bisno":0,
     "bisname":"",
     "bismrp":"",
     "bisquantity":0,
     })
- }
+
  const settingvalues=()=>
  {
-     setmyvalues(Reading1(indexvalue.who))
+     setvalues(Reading1(indexvalue.who))
  }
  useEffect(()=>
  {
@@ -21,7 +21,7 @@ import { Reading1 } from "./task"
  return(
     <>
     <>
-    <div className="container text-center mt-3">
+    <div className="container text-center mt-3" >
             <div className="row justify-content-center">
                 <div className="col-lg-8 col-md-10 col-sm-12">
                     <div className="bg-dark text-light">
@@ -46,4 +46,5 @@ import { Reading1 } from "./task"
         </div>
     </>
     </>
- )
+ );
+}
