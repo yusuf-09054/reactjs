@@ -4,10 +4,12 @@ import { creation } from "./taska"
 export let Bistable=()=>
 {
  const[values,setvalues]=useState({
-    "bisno":0,
-    "bisname":"",
-    "bismrp":"",
-    "bisquantity":0,
+    "productcount":0,
+    "productcategory":"",
+    "productbrand":"",
+    "productname":"",
+    "productprice":0,
+    "productoffer":0,
  })
 
 
@@ -30,50 +32,73 @@ const Biscuit=()=>
 }
 return(
     <>
-    <div className="container text-center" style={{backgroundImage:"url('https://img.delicious.com.au/T_mAoteE/w759-h506-cfill/del/2021/03/white-chocolate-anzac-biscuits-148212-2.jpg')"}}>
+    <div className="container text-center" style={{backgroundImage:"url('https://checkstandprogram.com/wp-content/uploads/2015/05/Getting-product-into-supermarkets.jpg')"}}>
         <div className="row justify-content-center">
-            <h1 className="text-center">Biscuitsdetails</h1>
-            <div className="col-lg-8 col-md-10 col-sm-12" >
+        <h1 className="text-center">product DETAILS</h1>
+                <div className="col-lg-8 col-md-10 col-sm-12">
                     <div className="form-group">
-                    <label className="form-label">Enter your fav biscuit no:</label>
+                        <label className="form-label">Enter your productcount:</label>
                         <input
-                        placeholder="Enter your fav biscuit no"
+                        placeholder="Enter your productcount:"
                         type="number"
-                        name="bisno"
+                        name="productcount"
                         onChange={track}
-                        value={values.bisno}
-                        className="form-contorl"
-                        />
-                         <div className="form-group">
-                        <label className="form-label">Enter your biscuit name:</label>
-                        <input
-                        placeholder="Enter your biscuit name"
-                        type="text"
-                        name="bisname"
-                        onChange={track}
-                        value={values.bisname}
+                        value={values.productcount}
                         className="form-contorl"
                         />
                     </div>
                     <div className="form-group">
-                        <label className="form-label">Enter mrp :</label>
+                        <label className="form-label">Enter your productcategory:</label>
                         <input
-                        placeholder="Enter mrp"
+                        placeholder="Enter your productcategory"
                         type="text"
-                        name="bismrp"
+                        name="productcategory"
                         onChange={track}
-                        value={values.bismrp}
+                        value={values.productcategory}
                         className="form-contorl"
                         />
                     </div>
                     <div className="form-group">
-                        <label className="form-label">Enter quantity :</label>
+                        <label className="form-label">Enter your productbrand</label>
                         <input
-                        placeholder="Enter quantity"
-                        type="number"
-                        name="bisquantity"
+                        placeholder="Enter productbrand"
+                        type="text"
+                        name="productbrand"
                         onChange={track}
-                        value={values.bisquantity}
+                        value={values.productbrand}
+                        className="form-contorl"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Enter your productname</label>
+                        <input
+                        placeholder="Enter productname"
+                        type="text"
+                        name="productname"
+                        onChange={track}
+                        value={values.productname}
+                        className="form-contorl"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Enter your productprice</label>
+                        <input
+                        placeholder="Enter productprice"
+                        type="text"
+                        name="productprice"
+                        onChange={track}
+                        value={values.productprice}
+                        className="form-contorl"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Enter your productoffer</label>
+                        <input
+                        placeholder="Enter productoofer"
+                        type="text"
+                        name="productoffer"
+                        onChange={track}
+                        value={values.productoffer}
                         className="form-contorl"
                         />
                     </div>
@@ -82,10 +107,9 @@ return(
                     <button className="btn btn-outline-danger col-5 me-3">CANCEL</button>
 
                     </div>
-                   </div>
-             </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </>
-);
+        </>
+    );
 }

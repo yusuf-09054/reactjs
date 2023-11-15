@@ -4,10 +4,12 @@ import { Reading1 } from "./taska"
  export let Bisrpage1=(indexvalue)=>
  {
     const[values,setvalues]=useState({
-    "bisno":0,
-    "bisname":"",
-    "bismrp":"",
-    "bisquantity":0,
+        "productcount":0,
+        "productcategory":"",
+        "productbrand":"",
+        "productname":"",
+        "productprice":0,
+        "productoffer":0,
     })
 
  const settingvalues=()=>
@@ -26,19 +28,27 @@ import { Reading1 } from "./taska"
                 <div className="col-lg-8 col-md-10 col-sm-12">
                     <div className="bg-dark text-light">
                     <tr className="text-center">
-                            <td className="ms-5">Biscuit No :{values.bisno}</td>
+                            <td className="ms-5">productcount:{values.productcount}</td>
                             <br></br>
                             <tr>
-                            <td className="ms-5">Biscuit Name:{values.bisname}</td>
-                            <br></br>
-                            </tr>
-                            <tr>
-                            <td className="ms-5">Biscuit mrp:{values.bismrp}</td>
+                            <td className="ms-5">productcategory:{values.productcategory}</td>
                             <br></br>
                             </tr>
                             <tr>
-                                <td className="ms-5">Biscuit Quantity:{values.bisquantity}</td>
+                            <td className="ms-5">productbrand:{values.productbrand}</td>
+                            <br></br>
                             </tr>
+                            <tr>
+                                <td className="ms-5">productname:{values.productname}</td>
+                            </tr>
+                            <br></br>
+                            <tr>
+                            <td className="ms-5">productprice:{values.productprice}</td>
+                            </tr> 
+                            <br></br>
+                            <tr>
+                            <td className="ms-5">productoffer:{values.productoffer}</td>
+                            </tr> 
                         </tr>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ export let Homepage1=()=>
     return(
         <>
         <Navbar bg="primary" expand="lg">
-        <NavbarBrand href="https://www.youtube.com/watch?v=O27I_g_xqLI"/>DAS&CO<NavbarBrand/>
+        <NavbarBrand href="https://www.youtube.com/watch?v=O27I_g_xqLI"/>PRODUCTS<NavbarBrand/>
         <NavbarToggle aria-controls="#mynavbar"/><NavbarToggle/>
         <NavbarCollapse id="mynavbar">
         <Nav>

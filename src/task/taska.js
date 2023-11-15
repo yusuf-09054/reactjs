@@ -1,21 +1,27 @@
 let Biscuitsdetails=[
     {
-        "bisno":1,
-        "bisname":"Milk bikis",
-        "bismrp":"rs:10",
-        "bisquantity":15,
+        "productcount":101,
+    "productcategory":"Biscuit",
+    "productbrand":"Britania",
+    "productname":"Milk Bikis",
+    "productprice":30,
+    "productoffer":0,
     },
     {
-        "bisno":2,
-        "bisname":"Oreo",
-        "bismrp":"rs:10",
-        "bisquantity":6,
-    },
+        "productcount":102,
+    "productcategory":"Chocolate",
+    "productbrand":"Cadbury",
+    "productname":"Dairy Milk",
+    "productprice":80,
+    "productoffer":0,  
+ },
     {
-        "bisno":3,
-        "bisname":"parleji",
-        "bismrp":"rs:3",
-        "bisquantity":10,
+        "productcount":103,
+        "productcategory":"Juice",
+        "productbrand":"AVT",
+        "productname":"Mazaa",
+        "productprice":40,
+        "productoffer":0,
     }
 ]
 export let creation=(Biscuitsdetails1)=>
@@ -34,7 +40,7 @@ export let Fetchingvalues1=(name)=>
 {
     const temp=Biscuitsdetails.filter((data)=>
     {
-        return data.bisname===name;
+        return data.productname===name;
     })
     return temp[0];
 }

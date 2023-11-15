@@ -5,7 +5,7 @@ import { Fetchingvalues1,list,removing1} from "./taska";
 import { Bistable} from "./task1t";
 import { BisUpage } from "./task4U";
 import { Bisrpage1 } from "./task2r";
-import { Fetchingvalues } from "../Arrayvalues";
+
 
 export let Bislpage=()=>
 {
@@ -72,10 +72,12 @@ const gettingvalues=()=>
             <table className="table table-striped table-dark col-lg-8 col-md-10 col-sm-12">
              <thead>
               <tr>
-                <th>Biscuit No</th>
-                <th>Biscuit Name</th>
-                <th>Biscuit MRP</th>
-                <th>Biscuit Quantity</th>
+                <th>productcount</th>
+                <th>productcategory</th>
+                <th>productbrand</th>
+                <th>productname</th>
+                <th>productprice</th>
+                <th>productoffer</th>
                 <th>ACTIONS</th>
               </tr>
              </thead>
@@ -89,17 +91,19 @@ const gettingvalues=()=>
                             {
                                 setReadpage(true);
                                 setpos(index)
-                            }}>{data.bisno}</td>
-                            <td>{data.bisname}</td>
-                            <td>{data.bismrp}</td>
-                            <td>{data.bisquantity}</td>
+                            }}>{data.productcount}</td>
+                            <td>{data.productcategory}</td>
+                            <td>{data.productbrand}</td>
+                            <td>{data.productname}</td>
+                            <td>{data.productprice}</td>
+                            <td>{data.productoffer}</td>
                             <td> 
                                 <button className="btn btn-outline-info"
                                 onClick={()=>
                                 {
                                     setupdatepage(true)
                                     setpos(index)
-                                    const temp=Fetchingvalues1(data.bisname);
+                                    const temp=Fetchingvalues1(data.productname);
                                     setObject(temp);
                                 }}>
                                     Update
